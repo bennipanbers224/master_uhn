@@ -2,6 +2,7 @@
 //use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataMahasiswaController;
+use App\Http\Controllers\UploadController;
 
 Route::get('/', function () {
     if(Auth::user()!=null){
@@ -25,3 +26,5 @@ Route::get('/logout', function(){
     Auth::logout();
     return redirect('login');
 });
+
+Route::get('/upload', [UploadController::class, 'index']);

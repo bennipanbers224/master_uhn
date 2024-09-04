@@ -108,6 +108,15 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="/upload" class="nav-link">
+              <i class="nav-icon fa fa-folder"></i>
+              <p>
+                Upload Dokumen
+              </p>
+            </a>
+          </li>
           
           <!--Setting-->
           <li class="nav-header">Setting</li>
