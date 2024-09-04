@@ -89,31 +89,31 @@
                                 <td>1</td>
                                 <td>Surat Bukti Penyerahan Artefak</td>
                                 <td>-</td>
-                                <td><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">Upload Dokumen</button></td>
+                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Upload File</button></td>
                             </tr>
                             <tr>
                                 <td>2</td>
                                 <td>Surat Pernyataan PPKHA</td>
                                 <td>-</td>
-                                <td><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">Upload Dokumen</button></td>
+                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Upload File</button></td>
                             </tr>
                             <tr>
                                 <td>3</td>
                                 <td>Surat Bebas Sanksos/Jam Karya</td>
                                 <td>-</td>
-                                <td><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">Upload Dokumen</button></td>
+                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Upload File</button></td>
                             </tr>
                             <tr>
                                 <td>4</td>
                                 <td>Surat Pernyataan BAAF</td>
                                 <td>-</td>
-                                <td><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">Upload Dokumen</button></td>
+                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Upload File</button></td>
                             </tr>
                             <tr>
                                 <td>5</td>
                                 <td>Poto</td>
                                 <td>-</td>
-                                <td><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">Upload Dokumen</button></td>
+                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Upload File</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -136,7 +136,7 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Upload Dokumen</h4>
+                    <h4 class="modal-title">Upload File</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
