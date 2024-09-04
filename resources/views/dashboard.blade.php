@@ -36,15 +36,21 @@
                 <div class="small-box bg-success">
                   <div class="inner">
                     <h2>Verifikasi<br>Fakultas</h2>
+                    <div class="icon">
+                      <i class="fas fa-check"></i>
+                    </div>  
                   </div>
                   <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
               <!-- Third Row -->
               <div class="col-lg-6 col-12">
-                <div class="small-box bg-warning">
+                <div class="small-box bg-primary">
                   <div class="inner">
-                    <h2>Yudisium<br></h2>
+                    <h2>Yudisium <br><br></h2>
+                    <div class="icon">
+                      <i class="fas fa-certificate"></i>
+                    </div> 
                   </div>
                   <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
@@ -54,6 +60,9 @@
                 <div class="small-box bg-danger">
                   <div class="inner">
                     <h2>Calon<br>Wisudawan</h2>
+                    <div class="icon">
+                      <i class="fas fa-user-graduate"></i>
+                    </div>
                   </div>
                   <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
@@ -71,7 +80,7 @@
               </div>
               <div class="card-body pt-0">
                 <!-- The mini calendar -->
-                <div id="mini-calendar"  style="width: 100%;"></div>
+                <div id="mini-calendar" ></div>
               </div>
             </div>
           </div>
