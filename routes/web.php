@@ -4,7 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataMahasiswaController;
 
 Route::get('/', function () {
-    return view('dashboard');
+    if(Auth::user()!=null){
+        return view('dashboard');
+    }else{
+        return redirect("login");
+    }
 });
 
 Route::get('/admin', function () {
@@ -13,3 +17,11 @@ Route::get('/admin', function () {
 
 Route::get('/mahasiswa', [DataMahasiswaController::class, 'index']);
 //Route::get('/', [HomeController::class,'dashboard']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/logout', function(){
+    Auth::logout();
+    return redirect('login');
+});
