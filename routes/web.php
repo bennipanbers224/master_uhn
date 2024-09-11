@@ -16,8 +16,16 @@ Route::get('/admin', function () {
     return view('index');
 });
 
+Route::get('/pengumuman', function () {
+    return view('pengumuman.index');
+});
+Route::get('/tambah-pengumuman', function () {
+    return view('pengumuman.tambah');
+});
+
+
+
 Route::get('/mahasiswa', [DataMahasiswaController::class, 'index']);
-//Route::get('/', [HomeController::class,'dashboard']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

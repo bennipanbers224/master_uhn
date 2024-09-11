@@ -29,10 +29,12 @@
   <link rel="stylesheet" href="{{asset('lte/plugins/fullcalendar/main.css')}}">
    <!-- Font Kustom -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-   <!-- logo -->
-  <link rel="stylesheet" href="{{ asset('lte/dist/css/custom_sidebar.css') }}">
-
-
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{asset('lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('lte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="{{asset('lte/plugins/daterangepicker/daterangepicker.css')}}">
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -108,12 +110,21 @@
               </p>
             </a>
           </li>
-
+          <!-- wisudan upload menu -->
           <li class="nav-item">
             <a href="/upload" class="nav-link">
               <i class="nav-icon fa fa-folder"></i>
               <p>
                 Upload Dokumen
+              </p>
+            </a>
+          </li>
+          <!-- wisudan pengumuman menu -->
+          <li class="nav-item">
+            <a href="/pengumuman" class="nav-link">
+              <i class="nav-icon fas fa-bullhorn"></i>
+              <p>
+                Pengumuman
               </p>
             </a>
           </li>
@@ -147,7 +158,6 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-
   <!-- Content Wrapper. Contains page content -->
   @yield('content')
   <!-- /.content-wrapper -->
@@ -205,8 +215,30 @@
 <script src="{{asset('lte/plugins/fullcalendar/main.js')}}"></script>
 <script src="{{ asset('lte/plugins/moment/moment.min.js') }}"></script>
 <!-- JS Kustom -->
-<script src="{{ asset('js/custom.js') }}"></script>
+<script src="{{asset('js/custom.js') }}"></script>
+<!-- DataTables  & Plugins -->
+<script src="{{asset('lte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('lte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{asset('lte/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('lte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{asset('lte/plugins/jszip/jszip.min.js')}}"></script>
+<script src="{{asset('lte/plugins/pdfmake/pdfmake.min.js')}}"></script>
+<script src="{{asset('lte/plugins/pdfmake/vfs_fonts.js')}}"></script>
+<script src="{{asset('lte/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{asset('lte/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{asset('lte/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+<!-- date-range-picker -->
+<script src="{{asset('lte/plugins/daterangepicker/daterangepicker.js')}}"></script> 
 
+<!-- Page specific script -->
+<script>
+  $(function () {
+    // Summernote
+    $('#summernote').summernote()
+  })
+</script>
 
 <!-- Inisialisasi FullCalendar JS -->
 <script>
