@@ -43,148 +43,30 @@
             </tr>
             </thead>
             <tbody>
+            @foreach ($data as $data)
             <tr>
-              <td>Fakultas Kedokteran</td>
-              <td>Mozilla 1.3</td>
-              <td>Win 95+ / OSX.1+</td>
-            <td class="project-actions text-left">
-                <a class="btn btn-primary btn-sm" href="#">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                </a>
-                <a class="btn btn-info btn-sm" href="#">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                </a>
-                <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                </a>
-            </td>
+              <td>{{$data->lembaga}}</td>
+              <td>{{$data->judul}}</td>
+              <td>{{$data->tanggal}}</td>
+                <td class="project-actions text-left">
+                    <a class="btn btn-primary btn-sm" href="#">
+                        <i class="fas fa-folder">
+                        </i>
+                        View
+                    </a>
+                    <a class="btn btn-info btn-sm" href="#">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Edit
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="#">
+                        <i class="fas fa-trash">
+                        </i>
+                        Delete
+                    </a>
+                </td>
             </tr>
-            <tr>
-              <td>Fakultas Kedokteran</td>
-              <td>Mozilla 1.4</td>
-              <td>Win 95+ / OSX.1+</td>
-            <td class="project-actions text-left">
-                <a class="btn btn-primary btn-sm" href="#">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                </a>
-                <a class="btn btn-info btn-sm" href="#">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                </a>
-                <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                </a>
-            </td>
-            </tr>
-            <tr>
-              <td>Fakultas Teknik</td>
-              <td>Lynx</td>
-              <td>Text only</td>
-            <td class="project-actions text-left">
-                <a class="btn btn-primary btn-sm" href="#">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                </a>
-                <a class="btn btn-info btn-sm" href="#">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                </a>
-                <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                </a>
-            </td>
-            </tr>
-            <tr>
-              <td>Fakultas Teknik</td>
-              <td>IE Mobile</td>
-              <td>Windows Mobile 6</td>
-            <td class="project-actions text-left">
-                <a class="btn btn-primary btn-sm" href="#">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                </a>
-                <a class="btn btn-info btn-sm" href="#">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                </a>
-                <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                </a>
-            </td>
-            </tr>
-            <tr>
-              <td>Fakultas Teknik</td>
-              <td>PSP Berita</td>
-              <td>PSP</td>
-            <td class="project-actions text-left">
-                <a class="btn btn-primary btn-sm" href="#">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                </a>
-                <a class="btn btn-info btn-sm" href="#">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                </a>
-                <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                </a>
-            </td>
-            </tr>
-            <tr>
-              <td>Sekolah Vokasi</td>
-              <td>All others</td>
-              <td>-</td>
-              <td class="project-actions text-left">
-                <a class="btn btn-primary btn-sm" href="#">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                </a>
-                <a class="btn btn-info btn-sm" href="#">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                </a>
-                <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                </a>
-            </td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-              <th>Lembaga</th>
-              <th>Berita</th>
-              <th>Rilis</th>
-              <th>Setting</th>
-            </tr>
-            </tfoot>
-          </table>
+            @endforeach
         </div>
         <!-- /.card-body -->
       </div>
