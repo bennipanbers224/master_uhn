@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataMahasiswaController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\PengumumanController;
 
 Route::get('/', function () {
     if(Auth::user()!=null){
@@ -16,12 +17,12 @@ Route::get('/admin', function () {
     return view('index');
 });
 
-Route::get('/pengumuman', function () {
-    return view('pengumuman.index');
-});
+//route for pengumuman
+Route::get('/pengumuman',[PengumumanController::class, 'index']);
 Route::get('/tambah-pengumuman', function () {
     return view('pengumuman.tambah');
 });
+Route::post('/pengumuman-store', [PengumumanController::class, 'store']);
 
 
 

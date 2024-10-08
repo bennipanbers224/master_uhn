@@ -43,148 +43,31 @@
             </tr>
             </thead>
             <tbody>
+            @foreach ($data as $data)
             <tr>
-              <td>Fakultas Kedokteran</td>
-              <td>Jadwal Pendaftaran Wisudawan Program Studi S1-Kedokteran</td>
-              <td>15/09/2024</td>
-            <td class="project-actions text-left">
-                <a class="btn btn-primary btn-sm" href="#">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                </a>
-                <a class="btn btn-info btn-sm" href="#">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                </a>
-                <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                </a>
-            </td>
+              <td>{{$data->lembaga}}</td>
+              <td>{{$data->judul}}</td>
+              <td>{{$data->tanggal}}</td>
+                <td class="project-actions text-left">
+                    <a class="btn btn-primary btn-sm" href="#">
+                        <i class="fas fa-folder">
+                        </i>
+                        View
+                    </a>
+                    <a class="btn btn-info btn-sm" href="#">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Edit
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="#">
+                        <i class="fas fa-trash">
+                        </i>
+                        Delete
+                    </a>
+                </td>
             </tr>
-            <tr>
-              <td>Fakultas Kedokteran</td>
-              <td>Pendaftaran studi lanjut Magister bagi mahasiswa berprestasi</td>
-              <td>15/09/2024</td>
-            <td class="project-actions text-left">
-                <a class="btn btn-primary btn-sm" href="#">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                </a>
-                <a class="btn btn-info btn-sm" href="#">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                </a>
-                <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                </a>
-            </td>
-            </tr>
-            <tr>
-              <td>Fakultas Teknik</td>
-              <td>Batas pendaftaran wisuda program studi Teknik Elektro</td>
-              <td>15/09/2024</td>
-            <td class="project-actions text-left">
-                <a class="btn btn-primary btn-sm" href="#">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                </a>
-                <a class="btn btn-info btn-sm" href="#">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                </a>
-                <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                </a>
-            </td>
-            </tr>
-            <tr>
-              <td>Fakultas Teknik</td>
-              <td>Batas Pendaftaran wisuda program studi Teknik Mesin</td>
-              <td>15/09/2024</td>
-            <td class="project-actions text-left">
-                <a class="btn btn-primary btn-sm" href="#">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                </a>
-                <a class="btn btn-info btn-sm" href="#">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                </a>
-                <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                </a>
-            </td>
-            </tr>
-            <tr>
-              <td>Fakultas Teknik</td>
-              <td>Beasiswa studi lanjut magister bagi mahasiswa berprestasi prodi S1-Teknik mesin</td>
-              <td>15/09/2024</td>
-            <td class="project-actions text-left">
-                <a class="btn btn-primary btn-sm" href="#">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                </a>
-                <a class="btn btn-info btn-sm" href="#">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                </a>
-                <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                </a>
-            </td>
-            </tr>
-            <tr>
-              <td>Sekolah Vokasi</td>
-              <td>Batas Pendaftaran mahasiswa D3/D4 seluruh program studi sekolah vokasi</td>
-              <td>15/09/2024</td>
-              <td class="project-actions text-left">
-                <a class="btn btn-primary btn-sm" href="#">
-                    <i class="fas fa-folder">
-                    </i>
-                    View
-                </a>
-                <a class="btn btn-info btn-sm" href="#">
-                    <i class="fas fa-pencil-alt">
-                    </i>
-                    Edit
-                </a>
-                <a class="btn btn-danger btn-sm" href="#">
-                    <i class="fas fa-trash">
-                    </i>
-                    Delete
-                </a>
-            </td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-              <th>Lembaga</th>
-              <th>Berita</th>
-              <th>Rilis</th>
-              <th>Setting</th>
-            </tr>
-            </tfoot>
-          </table>
+            @endforeach
+
         </div>
         <!-- /.card-body -->
       </div>
