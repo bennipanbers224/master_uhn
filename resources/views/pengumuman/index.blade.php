@@ -45,8 +45,8 @@
             <tbody>
             <tr>
               <td>Fakultas Kedokteran</td>
-              <td>Mozilla 1.3</td>
-              <td>Win 95+ / OSX.1+</td>
+              <td>Jadwal Pendaftaran Wisudawan Program Studi S1-Kedokteran</td>
+              <td>15/09/2024</td>
             <td class="project-actions text-left">
                 <a class="btn btn-primary btn-sm" href="#">
                     <i class="fas fa-folder">
@@ -67,8 +67,8 @@
             </tr>
             <tr>
               <td>Fakultas Kedokteran</td>
-              <td>Mozilla 1.4</td>
-              <td>Win 95+ / OSX.1+</td>
+              <td>Pendaftaran studi lanjut Magister bagi mahasiswa berprestasi</td>
+              <td>15/09/2024</td>
             <td class="project-actions text-left">
                 <a class="btn btn-primary btn-sm" href="#">
                     <i class="fas fa-folder">
@@ -89,8 +89,8 @@
             </tr>
             <tr>
               <td>Fakultas Teknik</td>
-              <td>Lynx</td>
-              <td>Text only</td>
+              <td>Batas pendaftaran wisuda program studi Teknik Elektro</td>
+              <td>15/09/2024</td>
             <td class="project-actions text-left">
                 <a class="btn btn-primary btn-sm" href="#">
                     <i class="fas fa-folder">
@@ -111,8 +111,8 @@
             </tr>
             <tr>
               <td>Fakultas Teknik</td>
-              <td>IE Mobile</td>
-              <td>Windows Mobile 6</td>
+              <td>Batas Pendaftaran wisuda program studi Teknik Mesin</td>
+              <td>15/09/2024</td>
             <td class="project-actions text-left">
                 <a class="btn btn-primary btn-sm" href="#">
                     <i class="fas fa-folder">
@@ -133,8 +133,8 @@
             </tr>
             <tr>
               <td>Fakultas Teknik</td>
-              <td>PSP Berita</td>
-              <td>PSP</td>
+              <td>Beasiswa studi lanjut magister bagi mahasiswa berprestasi prodi S1-Teknik mesin</td>
+              <td>15/09/2024</td>
             <td class="project-actions text-left">
                 <a class="btn btn-primary btn-sm" href="#">
                     <i class="fas fa-folder">
@@ -155,8 +155,8 @@
             </tr>
             <tr>
               <td>Sekolah Vokasi</td>
-              <td>All others</td>
-              <td>-</td>
+              <td>Batas Pendaftaran mahasiswa D3/D4 seluruh program studi sekolah vokasi</td>
+              <td>15/09/2024</td>
               <td class="project-actions text-left">
                 <a class="btn btn-primary btn-sm" href="#">
                     <i class="fas fa-folder">
