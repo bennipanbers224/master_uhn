@@ -15,7 +15,6 @@ class PengumumanController extends Controller
             'tanggal'=>$request->date_release,
             'content'=>$request->content
         ]);
-
         return redirect('/pengumuman');
     }
 
