@@ -6,7 +6,8 @@
             <div class="card-header">
                 <h3>{{$data->judul}}</h3>
                 <p>({{$data->lembaga}})  Tanggal Publish : {{$data->tanggal}}</p>
-
+                
+                @if(Auth::user()->role == 'Admin')
                 <div class="row justify-content-md-center">
                     <form action="/pengumuman-edit" method="post">
                         @csrf
@@ -20,6 +21,7 @@
                         <button class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i>Delete</button>
                     </form>
                 </div>
+                @endif
 
             </div>
         </div>

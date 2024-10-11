@@ -36,9 +36,11 @@
                 <th>Berita</th>
                 <th>Rilis</th>
                 <th>Setting
+                @if(Auth::user()->role == 'Admin')
                   <a href="/tambah-pengumuman" class="btn btn-success btn-sm" style="margin-left: 10px;">
                     <i class="fas fa-plus"></i> Tambah
                   </a>
+                @endif
                 </th>
               </tr>
               </thead>
@@ -55,7 +57,7 @@
                           <input type="hidden" name="id" value="{{$data->id}}">
                           <button class="btn btn-primary btn-sm"> <i class="fas fa-eye"></i>View</button>
                         </form>
-
+                        @if(Auth::user()->role == 'Admin')
                         <form action="/pengumuman-edit" method="post">
                           @csrf
                           <input type="hidden" name="id" value="{{$data->id}}">
@@ -67,6 +69,7 @@
                           <input type="hidden" name="id" value="{{$data->id}}">
                           <button class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i>Delete</button>
                         </form>
+                        @endif
                       </div>
                   </td>
               </tr>
