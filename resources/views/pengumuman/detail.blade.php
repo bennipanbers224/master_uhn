@@ -5,7 +5,22 @@
         <div class="card text-center">
             <div class="card-header">
                 <h3>{{$data->judul}}</h3>
-                <p>Tanggal Publish : {{$data->tanggal}}</p>
+                <p>({{$data->lembaga}})  Tanggal Publish : {{$data->tanggal}}</p>
+
+                <div class="row justify-content-md-center">
+                    <form action="/pengumuman-edit" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$data->id}}">
+                        <button class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i>Edit</button>
+                    </form>
+                    &nbsp&nbsp&nbsp
+                    <form action="/pengumuman-delete" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$data->id}}">
+                        <button class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i>Delete</button>
+                    </form>
+                </div>
+
             </div>
         </div>
         <div class="card-body">

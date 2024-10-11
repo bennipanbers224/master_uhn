@@ -24,6 +24,9 @@ Route::get('/tambah-pengumuman', function () {
 });
 Route::post('/pengumuman-store', [PengumumanController::class, 'store']);
 Route::post('/pengumuman-content', [PengumumanController::class, 'detail']);
+Route::post('/pengumuman-edit', [PengumumanController::class, 'edit']);
+Route::post('/pengumuman-update', [PengumumanController::class, 'update']);
+Route::post('/pengumuman-delete', [PengumumanController::class, 'delete']);
 
 
 
