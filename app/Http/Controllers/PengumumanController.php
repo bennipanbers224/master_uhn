@@ -24,4 +24,12 @@ class PengumumanController extends Controller
         return view('pengumuman.index', compact('data'));
 
     }
+
+    public function detail(Request $request){
+        
+        $id = $request->id;
+        $data = pengumuman::find($id);   
+
+        return view('pengumuman.detail', compact('data'));
+    }
 }

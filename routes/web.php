@@ -23,6 +23,7 @@ Route::get('/tambah-pengumuman', function () {
     return view('pengumuman.tambah');
 });
 Route::post('/pengumuman-store', [PengumumanController::class, 'store']);
+Route::post('/pengumuman-content', [PengumumanController::class, 'detail']);
 
 
 
