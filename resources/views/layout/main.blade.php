@@ -10,33 +10,33 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('lte/plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="{{asset('lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
   <!-- iCheck -->
-  <link rel="stylesheet" href="{{asset('lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- JQVMap -->
-  <link rel="stylesheet" href="{{asset('lte/plugins/jqvmap/jqvmap.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/plugins/jqvmap/jqvmap.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('lte/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/dist/css/adminlte.min.css')}}">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="{{asset('lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="{{asset('lte/plugins/daterangepicker/daterangepicker.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
-  <link rel="stylesheet" href="{{asset('lte/plugins/summernote/summernote-bs4.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/plugins/summernote/summernote-bs4.min.css')}}">
   <!-- FullCalendar CSS -->
-  <link rel="stylesheet" href="{{asset('lte/plugins/fullcalendar/main.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/plugins/fullcalendar/main.css')}}">
    <!-- Font Kustom -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <!-- DataTables -->
-  <link rel="stylesheet" href="{{asset('lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
-  <link rel="stylesheet" href="{{asset('lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
-  <link rel="stylesheet" href="{{asset('lte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
   <!-- daterange picker -->
-  <link rel="stylesheet" href="{{asset('lte/plugins/daterangepicker/daterangepicker.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('lte/plugins/daterangepicker/daterangepicker.css')}}">
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -95,6 +95,7 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Dashboard side menu -->
+          @if(Auth::user()->role == 'Admin')
           <li class="nav-item menu-open">
             <a href="/" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -112,7 +113,9 @@
               </p>
             </a>
           </li>
+          @endif
           <!-- wisudan upload menu -->
+           @if(Auth::user()->role == 'Mahasiswa')
           <li class="nav-item">
             <a href="/upload" class="nav-link">
               <i class="nav-icon fa fa-folder"></i>
@@ -121,6 +124,7 @@
               </p>
             </a>
           </li>
+          @endif
           <!-- wisudan pengumuman menu -->
           <li class="nav-item">
             <a href="/pengumuman" class="nav-link">
@@ -140,12 +144,14 @@
               <i class="right fas fa-angle-left"></i>
             </a>
             <ul class="nav nav-treeview">
+              @if(Auth::user()->name == 'Admin')
               <li class="nav-item">
                 <a href="./index.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Daftar Users</p>
                 </a>
               </li>
+              @endif
               <li class="nav-item">
                 <a href="./index2.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -164,10 +170,9 @@
   @yield('content')
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
+    <div class="container text-center">
+      <strong>Univesitas HKBP Nommensen &copy; 7 Oktober 1954</strong>
+      All rights reserved.
     </div>
   </footer>
 
@@ -180,59 +185,59 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="{{asset('lte/plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="{{asset('lte/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="{{asset('lte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- ChartJS -->
-<script src="{{asset('lte/plugins/chart.js/Chart.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
-<script src="{{asset('lte/plugins/sparklines/sparkline.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/sparklines/sparkline.js')}}"></script>
 <!-- JQVMap -->
-<script src="{{asset('lte/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{asset('lte/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
 <!-- jQuery Knob Chart -->
-<script src="{{asset('lte/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
 <!-- daterangepicker -->
-<script src="{{asset('lte/plugins/moment/moment.min.js')}}"></script>
-<script src="{{asset('lte/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/moment/moment.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/daterangepicker/daterangepicker.js')}}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="{{asset('lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 <!-- Summernote -->
-<script src="{{asset('lte/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
-<script src="{{asset('lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{asset('lte/dist/js/adminlte.js')}}"></script>
+<script src="{{URL::asset('lte/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('lte/dist/js/demo.js')}}"></script>
+<script src="{{URL::asset('lte/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('lte/dist/js/pages/dashboard.js')}}"></script>
+<script src="{{URL::asset('lte/dist/js/pages/dashboard.js')}}"></script>
 <!-- FullCalendar JS -->
-<script src="{{asset('lte/plugins/fullcalendar/main.js')}}"></script>
-<script src="{{ asset('lte/plugins/moment/moment.min.js') }}"></script>
+<script src="{{URL::asset('lte/plugins/fullcalendar/main.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/moment/moment.min.js') }}"></script>
 <!-- JS Kustom -->
-<script src="{{asset('js/custom.js') }}"></script>
+<script src="{{URL::asset('js/custom.js') }}"></script>
 <!-- DataTables  & Plugins -->
-<script src="{{asset('lte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('lte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
-<script src="{{asset('lte/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
-<script src="{{asset('lte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
-<script src="{{asset('lte/plugins/jszip/jszip.min.js')}}"></script>
-<script src="{{asset('lte/plugins/pdfmake/pdfmake.min.js')}}"></script>
-<script src="{{asset('lte/plugins/pdfmake/vfs_fonts.js')}}"></script>
-<script src="{{asset('lte/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
-<script src="{{asset('lte/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
-<script src="{{asset('lte/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/jszip/jszip.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/pdfmake/pdfmake.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/pdfmake/vfs_fonts.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{URL::asset('lte/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 <!-- date-range-picker -->
-<script src="{{asset('lte/plugins/daterangepicker/daterangepicker.js')}}"></script> 
+<script src="{{URL::asset('lte/plugins/daterangepicker/daterangepicker.js')}}"></script> 
 
 <!-- Page specific script -->
 <script>
