@@ -55,20 +55,20 @@
                         <form action="/pengumuman-content" method="post">
                           @csrf
                           <input type="hidden" name="id" value="{{$data->id}}">
-                          <button class="btn btn-primary btn-sm"> <i class="fas fa-eye"></i>View</button>
-                        </form>
+                          <button class="btn btn-primary btn-sm"> <i class="fas fa-eye"></i></button>
+                        </form>&nbsp
                         @if(Auth::user()->role == 'Admin')
                         <form action="/pengumuman-edit" method="post">
                           @csrf
                           <input type="hidden" name="id" value="{{$data->id}}">
-                          <button class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i>Edit</button>
-                        </form>
+                          <button class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i></button>
+                        </form>&nbsp
 
                         <form action="/pengumuman-delete" method="post">
                           @csrf
                           <input type="hidden" name="id" value="{{$data->id}}">
-                          <button class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i>Delete</button>
-                        </form>
+                          <button class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i></button>
+                        </form>&nbsp
                         @endif
                       </div>
                   </td>
