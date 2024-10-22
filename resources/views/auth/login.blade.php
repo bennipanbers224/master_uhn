@@ -98,6 +98,9 @@
                                     @endif -->
                             </div>
                         </form>
+                        <div class="container">
+                            Belum punya akun? <a href="{{ route('register') }}">Daftar di sini</a>
+                        </div>
                         <!-- <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="input-group mb-3">

@@ -7,7 +7,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0" style="font-family: 'Lucida Bright', sans-serif; font-size: 24px; font-weight: bold; color: #333;"
-            >Mahasiswa</h1>
+            >Wisudawan</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -20,7 +20,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Upload Data Wisudatan</button>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -28,41 +28,23 @@
                   <thead>
                   <tr>
                     <th>Nama</th>
+                    <th>NIM</th>
                     <th>Jenis Kelamin</th>
-                    <th>Status</th>
-                    <th>Umur</th>
-                    <th>Status Nikah</th>
-                    <th>IPS 1</th>
-                    <th>IPS 2</th>
-                    <th>IPS 3</th>
-                    <th>IPS 4</th>
-                    <th>IPS 5</th>
-                    <th>IPS 6</th>
-                    <th>IPS 7</th>
-                    <th>IPS 8</th>
-                    <th>IPK</th>
-                    <th>Status Kelulusan</th>
-                
+                    <th>Lama Studi</th>
+                    <th>Fakultas</th>
+                    <th>Program Studi</th>
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
                     @foreach($dataMahasiswa as $student)
                     <tr>
                         <td>{{$student->name}}</td>
+                        <td>{{$student->nim}}</td>
                         <td>{{$student->jenis_kelamin}}</td>
-                        <td>{{$student->status}}</td>
-                        <td>{{$student->umur}}</td>
-                        <td>{{$student->status_nikah}}</td>
-                        <td>{{$student->ips1}}</td>
-                        <td>{{$student->ips2}}</td>
-                        <td>{{$student->ips3}}</td>
-                        <td>{{$student->ips4}}</td>
-                        <td>{{$student->ips5}}</td>
-                        <td>{{$student->ips6}}</td>
-                        <td>{{$student->ips7}}</td>
-                        <td>{{$student->ips8}}</td>
-                        <td>{{$student->ipk}}</td>
-                        <td>{{$student->status_kelulusan}}</td>
+                        <td>{{$student->lama_studi}}</td>
+                        <td>{{$student->fakultas}}</td>
+                        <td>{{$student->program_studi}}</td>
                     </tr>
                     @endforeach
                   </tbody>
@@ -79,5 +61,30 @@
       <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+    <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">File Data Wisudawan</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <input name="file" class="form-control" type="file" id="formFile">
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+                </div>
+            </div>
+        </div>
 </div>
 @endsection

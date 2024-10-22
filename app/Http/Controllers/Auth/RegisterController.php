@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\mahasiswa;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -63,11 +64,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'role' => 'Mahasiswa',
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $mahasiswa = mahasiswa::where('nim', $data['nim'])->get();
+
+        if($mahasiswa->isEmpty()){
+            session()->flash('alert', 'Nomor Induk Mahasiswa tidak terdaftar sebagai calon Wisudawan');
+
+            return redirect()->back();
+        }
+        else{
+            return User::create([
+                'name' => $data['name'],
+                'role' => 'Mahasiswa',
+                'nim' => $data['nim'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+        }
     }
 }
