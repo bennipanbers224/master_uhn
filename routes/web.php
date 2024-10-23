@@ -31,6 +31,8 @@ Route::post('/pengumuman-delete', [PengumumanController::class, 'delete']);
 
 
 Route::get('/mahasiswa', [DataMahasiswaController::class, 'index']);
+Route::post('/import-wisudawan', [DataMahasiswaController::class, 'importData']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
