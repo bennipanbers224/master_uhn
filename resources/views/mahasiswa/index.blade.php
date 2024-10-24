@@ -1,5 +1,10 @@
 @extends('layout.main')
 @section('content')
+    @if(session('alert'))
+        <script>
+            alert('{{ session('alert') }}');
+        </script>
+    @endif
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
