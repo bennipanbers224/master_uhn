@@ -21,6 +21,31 @@
             <div class="card">
               <div class="card-header">
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Upload Data Wisudatan</button>
+                
+                <div class="col-md-8 float-right">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <form action="/wisudawan-faculty" method="post">
+                        @csrf
+                        <div class="input-group mb-3">
+                          <input type="text" name="faculty_name" class="form-control" placeholder="Nama Fakultas" required aria-describedby="basic-addon2">
+                          <button class="btn btn-info"><i class="fa fa-search"></i></button>
+                        </div>
+                      </form>
+                    </div>
+
+                    <div class="col-lg-4">
+                      <form action="/wisudawan-prodi" method="post">
+                        @csrf
+                        <div class="input-group mb-3">
+                          <input type="text" name="prodi_name" class="form-control" placeholder="Nama Program Studi" required aria-describedby="basic-addon2">
+                          <button class="btn btn-info"><i class="fa fa-search"></i></button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -45,6 +70,7 @@
                         <td>{{$student->lama_studi}}</td>
                         <td>{{$student->fakultas}}</td>
                         <td>{{$student->program_studi}}</td>
+                        <td><a href=""><button class="btn btn-primary"><i class="fa fa-eye"></i></button></a></td>
                     </tr>
                     @endforeach
                   </tbody>

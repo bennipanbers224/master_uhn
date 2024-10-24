@@ -16,14 +16,14 @@ class MahasiswaImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new mahasiswa([
-            "name"=>$row["name"],
+            "name"=>$row["nama"],
             "nim"=>$row["nim"],
             "jenis_kelamin"=>$row["jenis_kelamin"],
             "lama_studi"=>$row["lama_studi"],
-            "program_studi"=>$row["prodi"],
+            "program_studi"=>$row["program_studi"],
             "fakultas"=>$row["fakultas"],
             "ipk"=>$row["ipk"],
-            "umur"=>"23",
+            "umur"=>$row["umur"],
             "status_kelulusan"=>$row["status_kelulusan"]
         ]);
     }
