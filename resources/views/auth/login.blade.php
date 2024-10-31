@@ -99,7 +99,7 @@
                             </div>
                         </form>
                         <div class="container">
-                            Belum punya akun? <a href="{{ route('register') }}">Daftar di sini</a>
+                            Belum punya akun? <a href="/register-form">Daftar di sini</a>
                         </div>
                         <!-- <form method="POST" action="{{ route('login') }}">
                             @csrf

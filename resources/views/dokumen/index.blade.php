@@ -26,30 +26,38 @@
                 <div class="card-body">
                     <table id="example2" class="table table-bordered table-hover">
                         <thead>
+                            @foreach($mahasiswa as $mahasiswa)
+
                             <tr>
                                 <th>NIM</th>
-                                <td>11417020</td>
+                                <td>{{$mahasiswa->nim}}</td>
                             </tr>
                             <tr>
                                 <th>Nama</th>
-                                <td>Gabriel Benni Pernadi Panjaitan</td>
+                                <td>{{$mahasiswa->name}}</td>
+                            </tr>
+                            <tr>
+                                <th>Fakultas</th>
+                                <td>{{$mahasiswa->fakultas}}</td>
                             </tr>
                             <tr>
                                 <th>Program Studi</th>
-                                <td>D4 Teknik Rekayasa Perangkat Lunak</td>
+                                <td>{{$mahasiswa->program_studi}}</td>
                             </tr>
                             <tr>
-                                <th>Tanggal Masuk</th>
-                                <td>2017-08-07</td>
+                                <th>Lama Studi</th>
+                                <td>{{$mahasiswa->lama_studi}}</td>
                             </tr>
                             <tr>
-                                <th>Tanggal Lulus</th>
-                                <td>2021-08-20</td>
+                                <th>IPK</th>
+                                <td>{{$mahasiswa->ipk}}</td>
                             </tr>
                             <tr>
-                                <th>Status Pengajuan Dokumen</th>
-                                <td>0/5</td>
+                                <th>Status Kelulusan</th>
+                                <td>{{$mahasiswa->status_kelulusan}}</td>
                             </tr>
+
+                            @endforeach
                         </thead>
                     </table>
                 </div>
@@ -138,9 +146,16 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <div class="mb-3">
-                        <input class="form-control" type="file" id="formFile">
-                    </div>
+                    <form action="/upload-artefak" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <input class="form-control" type="file" id="formFile" name="file_artefak" required>
+                            <input class="form-control" type="hidden" name="nim" value="{{Auth::user()->nim}}" id="formFile" required>
+                        </div>
+                        <div class="position-absolute bottom-0 end-0">
+                            <button class="btn btn-info">Submit</button>
+                        </div>
+                    </form>
                 </div>
 
                 <!-- Modal footer -->
