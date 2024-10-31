@@ -99,31 +99,31 @@
                                     <td>1</td>
                                     <td>Surat Bukti Penyerahan Artefak</td>
                                     <td>-</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1">Upload File</button></td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>Surat Pernyataan PPKHA</td>
                                     <td>-</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal2">Upload File</button></td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>Surat Bebas Sanksos/Jam Karya</td>
                                     <td>-</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal3">Upload File</button></td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
                                     <td>Surat Pernyataan BAAF</td>
                                     <td>-</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal4">Upload File</button></td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
                                     <td>Foto</td>
                                     <td>-</td>
-                                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal5">Upload File</button></td>
+                                    <td>-</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -150,7 +150,7 @@
                                         @if($dokumen->artefak == '-')
 
                                         <td>-</td>
-                                        <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1">Upload File</button></td>
+                                        <td>-</td>
 
                                         @else
                                         <td>{{$dokumen->artefak}}</td>
@@ -172,7 +172,7 @@
                                         @if($dokumen->ppkha == '-')
 
                                         <td>-</td>
-                                        <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal2">Upload File</button></td>
+                                        <td>-</td>
 
                                         @else
                                         <td>{{$dokumen->ppkha}}</td>
@@ -194,7 +194,7 @@
                                         @if($dokumen->sanksos == '-')
 
                                         <td>-</td>
-                                        <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal3">Upload File</button></td>
+                                        <td>-</td>
 
                                         @else
                                         <td>{{$dokumen->sanksos}}</td>
@@ -205,7 +205,6 @@
                                                 <button class="btn btn-info"><i class="fa fa-eye"></i></button>
                                             </form>
                                         </td>
-s
                                         @endif
                                     </tr>
 
@@ -216,7 +215,7 @@ s
                                         @if($dokumen->pernyataan_baaf == '-')
 
                                         <td>-</td>
-                                        <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal4">Upload File</button></td>
+                                        <td>-</td>
 
                                         @else
                                         <td>{{$dokumen->pernyataan_baaf}}</td>
@@ -238,7 +237,7 @@ s
                                         @if($dokumen->foto == '-')
 
                                         <td>-</td>
-                                        <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal5">Upload File</button></td>
+                                        <td>-</td>
 
                                         @else
                                         <td>{{$dokumen->foto}}</td>
@@ -268,168 +267,5 @@ s
         </div>
       <!-- /.container-fluid -->
     </section>
-
-        <!-- The Modal -->
-        <div class="modal" id="myModal1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Upload File Bukti Penyerahan Artefak</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form action="/upload-artefak" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="mb-3">
-                            <input class="form-control" type="file" id="formFile" name="file_artefak" required>
-                        </div>
-                        <div class="position-absolute bottom-0 end-0">
-                            <button class="btn btn-info">Submit</button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal" id="myModal2">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Upload File Surat Pernyataan PPKHA</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form action="/upload-file-ppkha" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="mb-3">
-                            <input class="form-control" type="file" id="formFile" name="file_ppkha" required>
-                        </div>
-                        <div class="position-absolute bottom-0 end-0">
-                            <button class="btn btn-info">Submit</button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal" id="myModal3">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Upload File Surat Bebas Sanksi</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form action="/upload-bebas-sanksos" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="mb-3">
-                            <input class="form-control" type="file" id="formFile" name="file_bebas_sanksos" required>
-                        </div>
-                        <div class="position-absolute bottom-0 end-0">
-                            <button class="btn btn-info">Submit</button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal" id="myModal4">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Upload File Surat Pernyataan BAAF</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form action="/upload-pernyataan-baaf" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="mb-3">
-                            <input class="form-control" type="file" id="formFile" name="file_pernyataan_baaf" required>
-                        </div>
-                        <div class="position-absolute bottom-0 end-0">
-                            <button class="btn btn-info">Submit</button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="modal" id="myModal5">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Upload File Foto Formal</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form action="/upload-foto" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="mb-3">
-                            <input class="form-control" type="file" id="formFile" name="foto" required>
-                        </div>
-                        <div class="position-absolute bottom-0 end-0">
-                            <button class="btn btn-info">Submit</button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-
-                </div>
-            </div>
-        </div>
-
-    <!-- /.content -->
 </div>
 @endsection

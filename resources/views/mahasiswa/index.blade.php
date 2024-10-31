@@ -75,7 +75,13 @@
                         <td>{{$student->lama_studi}}</td>
                         <td>{{$student->fakultas}}</td>
                         <td>{{$student->program_studi}}</td>
-                        <td><a href=""><button class="btn btn-primary"><i class="fa fa-eye"></i></button></a></td>
+                        <td>
+                          <form action="/detail-wisudawan" method="post">
+                            @csrf
+                            <input type="hidden" name="nim" value="{{$student->nim}}">
+                            <button class="btn btn-primary"><i class="fa fa-eye"></i></button>
+                          </form>
+                        </td>
                     </tr>
                     @endforeach
                   </tbody>

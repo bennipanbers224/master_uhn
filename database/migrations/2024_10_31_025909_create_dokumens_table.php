@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('sanksos');
             $table->string('pernyataan_baaf');
             $table->string('foto');
+            $table->string('nim');
             $table->timestamps();
         });
     }

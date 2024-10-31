@@ -10,6 +10,6 @@ class dokumen extends Model
     use HasFactory;
     protected $table = "dokumens";
     protected $fillable = [
-        'artefak','ppkha','sanksos','pernyataan_baaf','foto','created_at', 'updated_at'
+        'artefak','ppkha','sanksos','pernyataan_baaf','foto','nim','created_at', 'updated_at'
     ];
 }

@@ -35,7 +35,6 @@ Route::get('/mahasiswa', [DataMahasiswaController::class, 'index']);
 Route::post('/import-wisudawan', [DataMahasiswaController::class, 'importData']);
 Route::post('/wisudawan-faculty', [DataMahasiswaController::class, 'filterByFaculty']);
 Route::post('/wisudawan-prodi', [DataMahasiswaController::class, 'filterByProdi']);
-Route::post('/upload-artefak', [UploadController::class, 'uploadArtefak']);
 
 
 Route::get('/admin-register', [UserController::class, 'openForm']);
@@ -53,3 +52,11 @@ Route::get('/logout', function(){
 });
 
 Route::get('/upload', [UploadController::class, 'index']);
+Route::post('/upload-artefak', [UploadController::class, 'uploadArtefak']);
+Route::post('/upload-file-ppkha', [UploadController::class, 'uploadPPKHA']);
+Route::post('/upload-bebas-sanksos', [UploadController::class, 'uploadSanksos']);
+Route::post('/upload-pernyataan-baaf', [UploadController::class, 'uploadBaaf']);
+Route::post('/upload-foto', [UploadController::class, 'uploadFoto']);
+Route::post('/detail-wisudawan', [UploadController::class, 'getDetailWisudawan']);
+Route::post('/detail-dokumen', [UploadController::class, 'detailDokumen']);
+
