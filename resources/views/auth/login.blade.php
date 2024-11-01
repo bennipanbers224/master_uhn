@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UHN | Log in</title>
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <title>AdminLTE 3 | Log in (v2)</title>
+ 
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -99,6 +100,9 @@
                                     @endif -->
                             </div>
                         </form>
+                        <div class="container">
+                            Belum punya akun? <a href="/register-form">Daftar di sini</a>
+                        </div>
                         <!-- <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="input-group mb-3">

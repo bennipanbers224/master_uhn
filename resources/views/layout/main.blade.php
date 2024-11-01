@@ -144,9 +144,9 @@
               <i class="right fas fa-angle-left"></i>
             </a>
             <ul class="nav nav-treeview">
-              @if(Auth::user()->name == 'Admin')
+              @if(Auth::user()->role == 'Admin')
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="/admin-register" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Daftar Users</p>
                 </a>
