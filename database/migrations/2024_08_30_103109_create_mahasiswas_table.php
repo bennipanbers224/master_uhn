@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('ipk');
             $table->string('umur');
             $table->string('status_kelulusan');
+            $table->string('ayah_kandung');
+            $table->string('ibu_kandung');
             $table->timestamps();
         });
     }

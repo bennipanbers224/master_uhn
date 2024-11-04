@@ -15,6 +15,54 @@ class DataMahasiswaController extends Controller
         return view('mahasiswa.index', compact('dataMahasiswa'));
     }
 
+    public function getDataWisudawan(Request $request){
+        
+        $wisudawan = mahasiswa::where('nim', $request->nim)->get();
+        return view('mahasiswa.edit', compact('wisudawan'));
+    }
+
+    public function updateWisudawan(Request $request){
+        
+        mahasiswa::where('id', $request->id)->update([
+            'name'=>$request->nama,
+            'jenis_kelamin'=>$request->jenis_kelamin,
+            'ayah_kandung'=>$request->ayah,
+            'ibu_kandung'=>$request->ibu,
+            'lama_studi'=>$request->lama_studi,
+            'fakultas'=>$request->fakultas,
+            'program_studi'=>$request->prodi,
+            'nim'=>$request->nim,
+            'ipk'=>$request->ipk,
+            'umur'=>$request->umur,
+            'status_kelulusan'=>$request->status_kelulusan
+        ]);
+
+        return redirect('/mahasiswa');
+    }
+
+    public function storeWisudawan(Request $request){
+
+        mahasiswa::create([
+            'name'=>$request->nama,
+            'jenis_kelamin'=>$request->jenis_kelamin,
+            'ayah_kandung'=>$request->ayah,
+            'ibu_kandung'=>$request->ibu,
+            'lama_studi'=>$request->lama_studi,
+            'fakultas'=>$request->fakultas,
+            'program_studi'=>$request->prodi,
+            'nim'=>$request->nim,
+            'ipk'=>$request->ipk,
+            'umur'=>$request->umur,
+            'status_kelulusan'=>$request->status_kelulusan
+        ]);
+
+        return redirect('/mahasiswa');
+    }
+
+    public function create(){
+        return view('mahasiswa.create');
+    }
+
     public function importData(Request $request){
         $request->validate([
             'file' => 'required|mimes:xls,xlsx',

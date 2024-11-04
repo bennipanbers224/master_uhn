@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 
 class UploadController extends Controller
 {
+    const directory = "dokumen";
+    const oldString = "/Users/gabrielpanjaitan/Laravel/master_uhn/public/";
+    
     public function index(){
 
         $nim = Auth::user()->nim;
@@ -37,7 +40,7 @@ class UploadController extends Controller
             $originalName = $file->getClientOriginalName();
     
             // Simpan file dengan nama asli di folder 'public/uploads'
-            $path = $file->storeAs('public/uploads', $originalName);
+            $path = $file->move(public_path(self::directory), $originalName);
 
             dokumen::create([
                 'artefak'=>$path,
@@ -58,7 +61,7 @@ class UploadController extends Controller
             $originalName = $file->getClientOriginalName();
     
             // Simpan file dengan nama asli di folder 'public/uploads'
-            $path = $file->storeAs('public/uploads', $originalName);
+            $path = $file->move(public_path(self::directory), $originalName);
 
             DB::table('dokumens')
                 ->where('nim', $nim)
@@ -87,7 +90,7 @@ class UploadController extends Controller
             $originalName = $file->getClientOriginalName();
     
             // Simpan file dengan nama asli di folder 'public/uploads'
-            $path = $file->storeAs('public/uploads', $originalName);
+            $path = $file->move(public_path(self::directory), $originalName);
 
             dokumen::create([
                 'artefak'=>'-',
@@ -108,7 +111,7 @@ class UploadController extends Controller
             $originalName = $file->getClientOriginalName();
     
             // Simpan file dengan nama asli di folder 'public/uploads'
-            $path = $file->storeAs('public/uploads', $originalName);
+            $path = $file->move(public_path(self::directory), $originalName);
 
             DB::table('dokumens')
                 ->where('nim', $nim)
@@ -137,7 +140,7 @@ class UploadController extends Controller
             $originalName = $file->getClientOriginalName();
     
             // Simpan file dengan nama asli di folder 'public/uploads'
-            $path = $file->storeAs('public/uploads', $originalName);
+            $path = $file->move(public_path(self::directory), $originalName);
 
             dokumen::create([
                 'artefak'=>'-',
@@ -158,7 +161,7 @@ class UploadController extends Controller
             $originalName = $file->getClientOriginalName();
     
             // Simpan file dengan nama asli di folder 'public/uploads'
-            $path = $file->storeAs('public/uploads', $originalName);
+            $path = $file->move(public_path(self::directory), $originalName);
 
             DB::table('dokumens')
                 ->where('nim', $nim)
@@ -187,7 +190,7 @@ class UploadController extends Controller
             $originalName = $file->getClientOriginalName();
     
             // Simpan file dengan nama asli di folder 'public/uploads'
-            $path = $file->storeAs('public/uploads', $originalName);
+            $path = $file->move(public_path(self::directory), $originalName);
 
             dokumen::create([
                 'artefak'=>'-',
@@ -208,7 +211,7 @@ class UploadController extends Controller
             $originalName = $file->getClientOriginalName();
     
             // Simpan file dengan nama asli di folder 'public/uploads'
-            $path = $file->storeAs('public/uploads', $originalName);
+            $path = $file->move(public_path(self::directory), $originalName);
 
             DB::table('dokumens')
                 ->where('nim', $nim)
@@ -238,7 +241,7 @@ class UploadController extends Controller
             $originalName = $file->getClientOriginalName();
     
             // Simpan file dengan nama asli di folder 'public/uploads'
-            $path = $file->storeAs('public/uploads', $originalName);
+            $path = $file->move(public_path(self::directory), $originalName);
 
             dokumen::create([
                 'artefak'=>'-',
@@ -259,7 +262,7 @@ class UploadController extends Controller
             $originalName = $file->getClientOriginalName();
     
             // Simpan file dengan nama asli di folder 'public/uploads'
-            $path = $file->storeAs('public/uploads', $originalName);
+            $path = $file->move(public_path(self::directory), $originalName);
 
             DB::table('dokumens')
                 ->where('nim', $nim)
@@ -282,8 +285,7 @@ class UploadController extends Controller
     }
 
     public function detailDokumen(Request $request){
-        $file = Storage::url($request->file);
-
+        $file = str_replace(self::oldString,'', $request->file);
         return view('dokumen.detail-dokumen', compact('file'));
 
     }

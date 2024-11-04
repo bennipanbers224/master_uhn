@@ -26,12 +26,19 @@
                 <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Data Mahasiswa Calon Wisudawan</h3>
+                    @foreach($mahasiswa as $mahasiswa)
+                    <div class="text-right">
+                        <form action="/edit-data-wisudawan" method="post">
+                            @csrf
+                            <input type="hidden" name="nim" value="{{$mahasiswa->nim}}">
+                            <button class="btn btn-outline-success btn-sm"><i class="fa fa-pen"></i>&nbsp Edit Data Wisudawan</button>
+                        </form>
+                    </div>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                     <table id="example2" class="table table-bordered table-hover">
                         <thead>
-                            @foreach($mahasiswa as $mahasiswa)
 
                             <tr>
                                 <th>NIM</th>
@@ -60,6 +67,14 @@
                             <tr>
                                 <th>Status Kelulusan</th>
                                 <td>{{$mahasiswa->status_kelulusan}}</td>
+                            </tr>
+                            <tr>
+                                <th>Nama Ayah</th>
+                                <td>{{$mahasiswa->ayah_kandung}}</td>
+                            </tr>
+                            <tr>
+                                <th>Nama Ibu</th>
+                                <td>{{$mahasiswa->ibu_kandung}}</td>
                             </tr>
 
                             @endforeach

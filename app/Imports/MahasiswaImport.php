@@ -24,7 +24,9 @@ class MahasiswaImport implements ToModel, WithHeadingRow
             "fakultas"=>$row["fakultas"],
             "ipk"=>$row["ipk"],
             "umur"=>$row["umur"],
-            "status_kelulusan"=>$row["status_kelulusan"]
+            "status_kelulusan"=>$row["status_kelulusan"],
+            "ayah_kandung"=>$row["ayah_kandung"],
+            "ibu_kandung"=>$row["ibu_kandung"]
         ]);
     }
 }

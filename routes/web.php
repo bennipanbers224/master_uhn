@@ -35,6 +35,10 @@ Route::get('/mahasiswa', [DataMahasiswaController::class, 'index']);
 Route::post('/import-wisudawan', [DataMahasiswaController::class, 'importData']);
 Route::post('/wisudawan-faculty', [DataMahasiswaController::class, 'filterByFaculty']);
 Route::post('/wisudawan-prodi', [DataMahasiswaController::class, 'filterByProdi']);
+Route::post('/edit-data-wisudawan', [DataMahasiswaController::class, 'getDataWisudawan']);
+Route::get('/create-wisudawan', [DataMahasiswaController::class, 'create']);
+Route::post('/update-wisudawan', [DataMahasiswaController::class, 'updateWisudawan']);
+Route::post('/store-wisudawan', [DataMahasiswaController::class, 'storeWisudawan']);
 
 
 Route::get('/admin-register', [UserController::class, 'openForm']);
